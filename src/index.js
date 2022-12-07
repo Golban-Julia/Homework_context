@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import LoginProvider from "./contexts/LoginProvider";
@@ -39,7 +40,10 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <LoginProvider>
     <RouterProvider router={router} />
-  </LoginProvider>);
+  </LoginProvider>
+  );
+  
  

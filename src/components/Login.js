@@ -13,8 +13,8 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 
 const Login = () => {
   const { loginUser } = useContext(LoginContext);
-  const { handleSubmit, control} = useForm(); 
-    
+  const { handleSubmit, control} = useForm();
+
   const onSubmit = (data) => {
       console.log(data);
       loginUser(data );
@@ -52,9 +52,11 @@ const Login = () => {
                 <Controller control={control}
                     name="username"
                     rules={{ required: "The field is required" }}
-                    render={({ field, fieldState: { error } }) => (
-                      <TextField {...field} fullWidth
+                    render={({ field,
+                    fieldState: { error } }) => (
+                      <TextField {...field}
                         id="outlined-basic" label="Username" variant="outlined"
+                                    fullWidth
                                     margin="normal"
                                     padding="normal"
                                     error={!!error}
@@ -66,7 +68,6 @@ const Login = () => {
             
             <Controller control={control}
               name="password"
-              type="password"
               rules={{ required: "The field is required" }}
               render={({ field, fieldState: { error } }) => (
                 <TextField {...field} fullWidth

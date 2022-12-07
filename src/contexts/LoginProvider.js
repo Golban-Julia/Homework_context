@@ -4,14 +4,14 @@ import LoginContext from "./LoginContext";
 
 import { login } from "../api";
 
-const userFromStorage = localStorage.getItem("userInfo");
+// const userFromStorage = localStorage.getItem("userInfo");
 
 const LoginProvider = ({ children }) => {
   const [isLoggedIn, setLoggedIn] = useState(() => {
-    return (!!localStorage.getItem("userInfo"));
+    return localStorage.getItem("userInfo") ? true : false;
   });
   const [userInfo, setUserInfo] = useState(() => {
-    const userFromStorage = localStorage.getItem("userInfo");
+    const userFromStorage = localStorage.getItem('userInfo');
     if (userFromStorage) {
       return JSON.parse(userFromStorage);
     }
